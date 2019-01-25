@@ -29,15 +29,15 @@ public class AsteroidCollision {
 
         }while(flag == 1);
         int count = 0;
-        for (int i = 0; i < asteroids.length; i++){
-            if (asteroids[i] != 0) count++;
+        for (int asteroid1 : asteroids) {
+            if (asteroid1 != 0) count++;
         }
         int j = 0;
         int[] result = new int[count];
 
-        for (int i = 0; i < asteroids.length; i++){
-            if (asteroids[i] != 0){
-                result[j] = asteroids[i];
+        for (int asteroid : asteroids) {
+            if (asteroid != 0) {
+                result[j] = asteroid;
                 j++;
             }
         }
@@ -46,7 +46,7 @@ public class AsteroidCollision {
     }
 
     public int[] betterAsteroidCollision(int[] asteroids) {
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
         for (int asteroid : asteroids){
             // 大于 0 的数直接入栈
             if (asteroid > 0){
@@ -84,7 +84,6 @@ public class AsteroidCollision {
                 return;
             }else {
                 stack.pop();
-                continue;
             }
         }
         if (stack.isEmpty()){
