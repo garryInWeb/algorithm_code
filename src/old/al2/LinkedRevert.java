@@ -41,17 +41,22 @@ public class LinkedRevert {
       }
 
     public static boolean hasCycle(ListNode head) {
-        if(head == null){
-            return false;
-        }
-        ListNode curr = head.next;
-        while(curr != null){
-            if (curr == head){
-                return true;
+        if (head == null || head.next == null) return false;
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (true){
+            if (slow == fast) return true;
+            if (slow.next != null){
+                slow = slow.next;
+            }else{
+                return false;
             }
-            curr = curr.next;
+            if (fast.next != null && fast.next.next != null){
+                fast = fast.next.next;
+            }else{
+                return false;
+            }
         }
-        return false;
     }
 
     public static void main(String[] args) {
@@ -62,7 +67,7 @@ public class LinkedRevert {
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
-        listNode4.next = listNode2;
+        listNode4.next = listNode3;
 
         System.out.println(hasCycle(listNode1));
 
