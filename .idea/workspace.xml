@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2097ca9c-e249-4297-859a-381159139aa4" name="Default" comment="leetCode part402 single number">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/old/leetCode/part402/RemoveKDigits.java" />
+    <list default="true" id="2097ca9c-e249-4297-859a-381159139aa4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -948,7 +947,7 @@
       <workItem from="1547479508643" duration="1342000" />
       <workItem from="1548226801448" duration="21490000" />
       <workItem from="1548666737772" duration="1692000" />
-      <workItem from="1548725592176" duration="18961000" />
+      <workItem from="1548725592176" duration="19009000" />
     </task>
     <task id="LOCAL-00001" summary="leetCode part69">
       <created>1548234343176</created>
@@ -1034,11 +1033,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548839120969</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="leetCode part402 remove k Digits">
+      <created>1548839493498</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1548839493498</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161989000" />
+    <option name="totallyTimeSpent" value="162037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1121,7 +1127,8 @@
     <MESSAGE value="leetCode part724 FindPivotIndex" />
     <MESSAGE value="leetCode part455 assign cookies" />
     <MESSAGE value="leetCode part376 wiggle Subsequence" />
-    <option name="LAST_COMMIT_MESSAGE" value="leetCode part376 wiggle Subsequence" />
+    <MESSAGE value="leetCode part402 remove k Digits" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetCode part402 remove k Digits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
