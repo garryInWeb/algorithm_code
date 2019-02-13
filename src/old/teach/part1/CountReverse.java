@@ -44,7 +44,7 @@ public class CountReverse {
 
     public static void main(String[] args) {
         CountReverse countReverse = new CountReverse();
-        System.out.println(countReverse.countReverse(new int[]{2,4,3,1,5,6}));
+        System.out.println(countReverse.countReverse(new int[]{2,7,3,1,5,6}));
 
     }
 }
