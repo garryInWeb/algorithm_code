@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * Created by zhengtengfei on 2019/2/22.
+ *
+ * 大顶堆，小顶堆
  */
 public class Heap {
 

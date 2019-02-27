@@ -23,10 +23,10 @@ public class Backpack {
             if (cw > maxWeight) maxWeight = cw;
             return;
         }
-        // 不放这一个的情况
+        // 不当前元素的情况
         f(i+1,cw,items,n,w);
         if (cw + items[i] <= w){
-            // 放着一个的情况
+            // 放当前元素的情况
             f(1+1,cw + items[i],items,n,w);
         }
     }
