@@ -25,13 +25,13 @@ public class MergeSort {
 
     public int[] quickSortC(int[] arr, int p, int r){
         if (p >= r){
-            return new int[]{arr[p]};
+            return new int[]{arr[p-1]};
         }
 
         int q = partition(arr,p,r);
-        if (q == 0 || q==r)
+        if (q == 0)
             return arr;
-        quickSortC(arr,p,q);
+        quickSortC(arr,p,q-1);
         quickSortC(arr,q+1,r);
 
         return arr;
@@ -87,7 +87,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         MergeSort mergeSort = new MergeSort();
-        int[] arr = new int[]{5,7,1,3,5,1,3,2,};
+        int[] arr = new int[]{8,3,1,9};
 //        int[] arr = new int[]{3,1,2,1};
 //        System.out.println(Arrays.toString(mergeSort.sort(arr, 0, arr.length-1)));
         System.out.println(Arrays.toString(mergeSort.quickSort(arr, arr.length)));
