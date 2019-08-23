@@ -13,25 +13,34 @@ public class GaryHashMap<K,V> {
         size = 0;
     }
 
-    private final float loadFactor;
-    private int capacity;
-    private int size;
+    final float loadFactor;
+    int capacity;
+    int size;
 
-    private Node<K,V>[] hashtable;
+    Node<K,V>[] hashtable;
 
 
-    class Node<K,V>{
+    static class Node<K,V>{
         K key;
         V value;
         int hash;
 
         Node<K,V> hnext;
+
+        public Node(K key, V value, int hash, Node<K, V> hnext) {
+            this.key = key;
+            this.value = value;
+            this.hash = hash;
+            this.hnext = hnext;
+        }
     }
 
-    private int hash(Object key){
+    protected int hash(Object key){
         int h;
         return (key == null) ? 0 : ((h = key.hashCode()) ^ (h >>> 16)) ;
     }
+
+    protected void afterNodeAccess(Node<K,V> p) { }
 
     public V get(K key){
         int hash = hash(key);
@@ -47,11 +56,7 @@ public class GaryHashMap<K,V> {
     }
 
     public V put(K key, V value){
-        Node<K,V> node = new Node<>();
-        node.key = key;
-        node.value = value;
-        node.hash = hash(key);
-        node.hnext = null;
+        Node<K, V> node = newNode(key, value);
 
         int hash = hash(key);
         Node<K, V>[] tal ;
@@ -89,8 +94,11 @@ public class GaryHashMap<K,V> {
 
         if(++ size > capacity*loadFactor )
             resize();
-
         return node.value;
+    }
+
+    private Node<K, V> newNode(K key, V value) {
+        return new Node<>(key,value,hash(key),null);
     }
 
     private Node<K, V>[] resize() {
