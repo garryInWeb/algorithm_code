@@ -5,36 +5,19 @@ import java.util.LinkedHashMap;
 
 public class MapTest {
     public static void main(String[] args) {
-        LinkedHashMap<Integer,String> linkedHashMap = new LinkedHashMap<>(16,0.75f,true);
-        linkedHashMap.put(1,"1");
-        linkedHashMap.put(2,"2");
-        linkedHashMap.put(3,"3");
-        linkedHashMap.put(4,"4");
-        System.out.println("Linked before");
-        linkedHashMap.get(3);
+        System.out.println(singleNumber(new int[]{6,7,6,7,6,7,2},7));
+    }
 
-        linkedHashMap.forEach((k,v) -> System.out.println(k + " : " + v));
+    static int singleNumber(int A[], int n) {
+        int ones = 0, twos = 0, xthrees = 0;
+        for(int i = 0; i < n; ++i) {
+            twos |= (ones & A[i]);
+            ones ^= A[i];
+            xthrees = ~(ones & twos);
+            ones &= xthrees;
+            twos &= xthrees;
+        }
 
-        linkedHashMap.get(3);
-        linkedHashMap.get(1);
-
-        System.out.println("Linked");
-        linkedHashMap.forEach((k,v) -> System.out.println(k + " : " + v));
-
-
-        HashMap<Integer,String> hashMap = new HashMap<>();
-        hashMap.put(1,"1");
-        hashMap.put(2,"2");
-        hashMap.put(3,"3");
-        hashMap.put(4,"4");
-
-        System.out.println("hash");
-        hashMap.forEach((k,v) -> System.out.println(k + " : " + v));
-
-        hashMap.get(3);
-        hashMap.get(1);
-
-        System.out.println("hash");
-        hashMap.forEach((k,v) -> System.out.println(k + " : " + v));
+        return ones;
     }
 }

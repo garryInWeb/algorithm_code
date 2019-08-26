@@ -42,7 +42,6 @@ public class GaryLinkedHashMap<K,V> extends GaryHashMap {
             return null;
         }
         afterNodeAccess(node);
-
         return node.value;
     }
 
