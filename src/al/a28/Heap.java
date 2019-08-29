@@ -1,4 +1,4 @@
-package al.part28;
+package al.a28;
 
 import java.util.Arrays;
 
