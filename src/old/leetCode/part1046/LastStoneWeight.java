@@ -11,8 +11,6 @@ public class LastStoneWeight {
 
         if(heap.count < 0) return 0;
         return heap.poll();
-
-
     }
 
     class Heap {

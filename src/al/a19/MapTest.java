@@ -1,15 +1,21 @@
 package al.a19;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.*;
 
 public class MapTest {
     public static void main(String[] args) {
-        System.out.println(singleNumber(new int[]{6,7,6,7,6,7,2},7));
+//        System.out.println(singleNumber(new int[]{6,7,6,7,6,7,2},7));
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>(3,(o,o1)->{
+            if (o > o1){
+                return -1;
+            }else{
+                return 1;
+            }
+        });
+        List<Integer> arr = new ArrayList(Arrays.asList(new int[]{1,2,3,4,5,6,7,8,9}));
+        queue.addAll(arr);
 
-        new ArrayList(Arrays.asList(args));
+        System.out.println(queue.peek().intValue());
     }
 
     static int singleNumber(int A[], int n) {
