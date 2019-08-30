@@ -1,5 +1,6 @@
 package al.a19;
 
+import java.io.InputStream;
 import java.util.*;
 
 public class MapTest {
@@ -14,6 +15,7 @@ public class MapTest {
         });
         List<Integer> arr = new ArrayList(Arrays.asList(new int[]{1,2,3,4,5,6,7,8,9}));
         queue.addAll(arr);
+
 
         System.out.println(queue.peek().intValue());
     }
